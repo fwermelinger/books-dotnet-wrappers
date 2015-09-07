@@ -76,7 +76,6 @@ namespace zohobooks.api
         {
             string url = baseAddress+"/"+contact_id;
             var responce = ZohoHttpClient.get(url, getQueryParameters());
-            Console.WriteLine(responce.Content.ReadAsStringAsync().Result);
             return ContactParser.getContact(responce);
         }
 
@@ -302,7 +301,6 @@ namespace zohobooks.api
         {
             string url = baseAddress +"/"+contact_id+"/contactpersons/"+contact_person_id;
             var responce = ZohoHttpClient.get(url, getQueryParameters());
-            Console.WriteLine(responce.Content.ReadAsStringAsync().Result);
             return ContactParser.getContactPerson(responce);
         }
 
